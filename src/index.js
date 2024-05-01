@@ -2,12 +2,15 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import path from 'path';
 import morgan from 'morgan';
+import { Router } from 'express';
 
 const app = express();
 const port = 3000;
 
 // Console logging
 app.use(morgan('combined'));
+
+app.use(express.static(path.join(import.meta.dirname, 'public')));
 
 // Template engine
 app.engine('hbs', handlebars.engine({

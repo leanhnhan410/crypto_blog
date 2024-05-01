@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "ignore": ["logs/*"], 
+    "ext": "js,json,hbs",
+    "exec": "node --inspect"
+}
