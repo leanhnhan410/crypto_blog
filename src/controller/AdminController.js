@@ -1,29 +1,24 @@
 /**
- * 
+ *
  */
 class AdminController {
-    
-    async getDashboardPage(req, res) {
-     // get data
-  
-      // return page
-      res.render('admin/page/dashboard', {
-        title: 'Admin Dashboard',
-       
-      });
-    }
+  async getDashboardPage(req, res) {
+    // get data
 
-    async getManagerPostPage(req, res) {
-      // get data
-   
-       // return page
-       res.render('admin/page/post/management-post', {
-         title: 'Admin Manager Post',
-        
-       });
-     }
-
-
+    // return page
+    res.render("admin/page/dashboard", {
+      title: "Admin Dashboard",
+    });
   }
-  
-  export default new AdminController;
+
+  async getManagerPostPage(req, res) {
+    // get data
+
+    // return page
+    res.render("admin/page/post/management-post", {
+      title: "Admin Manager Post",
+    });
+  }
+}
+
+export default new AdminController();

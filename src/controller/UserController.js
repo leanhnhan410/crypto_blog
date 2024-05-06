@@ -1,47 +1,42 @@
 /**
- * 
+ *
  */
 class UserController {
-    
-    async getRegisterPage(req, res) {
-      // get data
-  
-      // return page
-      res.render('user/user-register', {
-        title: 'Register',
-       
-      });
-    }
+  async getRegisterPage(req, res) {
+    // get data
 
-    async getLoginPage(req, res) {
-      // get data
-  
-      // return page
-      res.render('user/user-login', {
-        title: 'Login',
-       
-      });
-    }
-
-    async getProfilePage(req, res) {
-      // get data
-  
-      // return page
-      res.render('user/user-profile', {
-        title: 'Profile',
-       
-      });
-    }
-
-    async getLogoutPage(req, res) {
-      // get data
-  
-      // return page
-      res.render('user/user-logout', {
-        title: 'Logout',
-       
-      });
-    }
+    // return page
+    res.render("user/user-register", {
+      title: "Register",
+    });
   }
-  
-  export default new UserController;
+
+  async getLoginPage(req, res) {
+    // get data
+
+    // return page
+    res.render("user/user-login", {
+      title: "Login",
+    });
+  }
+
+  async getProfilePage(req, res) {
+    // get data
+
+    // return page
+    res.render("user/user-profile", {
+      title: "Profile",
+    });
+  }
+
+  async getLogoutPage(req, res) {
+    // get data
+
+    // return page
+    res.render("user/user-logout", {
+      title: "Logout",
+    });
+  }
+}
+
+export default new UserController();
