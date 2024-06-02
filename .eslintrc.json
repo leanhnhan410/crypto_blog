@@ -1,0 +1,12 @@
+{
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier", "handlebars"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "indent": ["error", 2],
+    "no-console": "warn",
+    "eol-last": ["error", "always"]
+  }
+}
