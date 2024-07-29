@@ -24,8 +24,8 @@ class UserController {
     // get data
 
     // return page
-    res.render("user/user-profile", {
-      title: "Profile",
+    res.render("user/user-dashboard", {
+      title: "Dashboard",
     });
   }
 
