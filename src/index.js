@@ -6,6 +6,9 @@ import mainRouter from "./routers/mainRouter.js";
 import hbs from "hbs";
 import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
+import crypto from 'crypto';
+import session from "express-session";
+import flash from "connect-flash";
 
 const app = express();
 const port = 3000;
@@ -35,6 +38,20 @@ app.use(express.urlencoded({
   extended: true,
 }));
 app.use(express.json());
+
+
+const secret = crypto.randomBytes(64).toString('hex');
+
+// Session middleware to handle sessions
+app.use(session({
+  secret: secret, // Secret key for signing the session ID cookie
+  resave: false, // Don't save session if unmodified
+  saveUninitialized: true, // Save new sessions
+  cookie: { secure: false } // Set to true if using HTTPS
+}));
+
+// Flash middleware to handle flash messages
+app.use(flash());
 
 // Template engine
 app.engine(

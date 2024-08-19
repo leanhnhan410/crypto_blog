@@ -1,4 +1,5 @@
 import express from "express";
+import { ensureAuthenticated } from "../middleware/auth.js";
 
 const userRouter = express.Router();
 
@@ -6,10 +7,11 @@ const userRouter = express.Router();
 import userController from "../controller/UserController.js";
 
 // define user routes
-userRouter.get("/user-login", userController.getLoginPage); //get login page
-userRouter.get("/user-logout", userController.getLogoutPage); // get logout page
-userRouter.get("/user-profile", userController.getProfilePage); // get profile page
-userRouter.get("/user-register", userController.getRegisterPage); // get register page
+userRouter.get("/login", userController.getLoginPage); //get login page
+userRouter.post("/login", userController.doLogin); //get login page
+userRouter.post("/logout", userController.doLogout); // get logout page
+userRouter.get("/profile",ensureAuthenticated, userController.getProfilePage); // get profile page
+userRouter.get("/register", userController.getRegisterPage); // get register page
 
 // Export routes
 export default userRouter;
