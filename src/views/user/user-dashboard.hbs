@@ -1,0 +1,110 @@
+{{> sidebar}}
+
+<div class="p-4 sm:ml-64">
+    <div class="grid grid-cols-4 gap-3 py-4">
+        <div class=" bg-slate-500 rounded-md">
+            <div class="px-3 text-xl font-bold">
+                500
+            </div>
+            <span class="px-3">
+                text
+            </span>
+        </div>
+        <div class=" bg-slate-500 rounded-md">
+            <div class="px-3 text-xl font-bold">
+                500
+            </div>
+            <div class="flex items-center">
+                <span class="pl-3 pr-1">
+                    24h Portfolio Change
+                </span>
+                <i class="arrow-down"></i>
+                <span class="pl-1 pr-3">
+                    0.5
+                </span>
+            </div>
+        </div>
+        <div class=" bg-slate-500 rounded-md">
+            <div class="px-3 text-xl font-bold">
+                500
+            </div>
+            <div class="flex items-center">
+                <span class="pl-3 pr-1">
+                    24h Portfolio Change
+                </span>
+                <i class="arrow-down"></i>
+                <span class="pl-1 pr-3">
+                    0.5
+                </span>
+            </div>
+        </div>
+        <div class=" bg-slate-500 rounded-md">
+            <div class="px-3 text-xl font-bold">
+                500
+            </div>
+            <div class="flex items-center">
+                <span class="pl-3 pr-1">
+                    24h Portfolio Change
+                </span>
+                <i class="arrow-down"></i>
+                <span class="pl-1 pr-3">
+                    0.5
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+        <div class=" bg-slate-500">
+            <div class="my-3 ml-3 font-bold text-xl">
+                Holdings
+            </div>
+            <div class="">
+                <div class="w-96 p-4 rounded-lg ml-3 mb-3 ">
+                    <canvas id="myDoughnutChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class=" bg-slate-500">01</div>
+    </div>
+</div>
+
+
+<script>
+    // Dữ liệu cho biểu đồ Doughnut
+    const data = {
+        labels: ['Red', 'Blue', 'Yellow', 'Green'],
+        datasets: [{
+            data: [300, 50, 100, 150],
+            backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0']
+        }]
+    };
+
+    // Cấu hình biểu đồ Doughnut
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'right',  // Xác nhận rằng vị trí chú thích là 'top'
+                    labels: {
+                        font: {
+                            size: 14  // Xác nhận rằng kích thước font là 14
+                        },
+                        color: '#ffffff',  // Xác nhận rằng màu chữ là đỏ
+                        padding: 20,
+                    }
+                }
+            }
+        }
+    };
+
+    // Tạo biểu đồ
+    const myDoughnutChart = new Chart(
+        document.getElementById('myDoughnutChart'),
+        config
+    );
+</script>
